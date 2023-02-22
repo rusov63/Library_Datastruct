@@ -19,24 +19,34 @@ class Stack:
         new_node.next_node = self.top
         self.top = new_node
 
-n1 = Node(5, None)
-n2 = Node('a', n1)
-print(n1.data) #5
-print(n2.data) #a
-print(n1)           #<__main__.Node object at 0x0000022803036050>
-print(n2.next_node) #<__main__.Node object at 0x0000022803036050>
+    def pop(self):
+        pop_node = self.top
+        pop_data = pop_node.data
+        self.top = pop_node.next_node
+        return pop_data
+
+stack = Stack()
+stack.push('data1')
+data = stack.pop()
+
+# стэк стал пустой
+print(stack.top)
+None
+
+# pop() удаляет элемент и возвращает данные удаленного элемента
+print(data)
+'data1'
+
 
 stack = Stack()
 stack.push('data1')
 stack.push('data2')
-stack.push('data3')
+data = stack.pop()
+
+# теперь последний элемента содержит данные data1
 print(stack.top.data)
-print(stack.top.next_node.data)
-print(stack.top.next_node.next_node.data)
-print(stack.top.next_node.next_node.next_node)
-#print(stack.top.next_node.next_node.next_node.data)
+'data1'
 
-'''Структуры данных. Конспект
-#https://skyengpublic.notion.site/ead128b268a247febb06b7a83652e1db#96ebfaa0c8854415a75a09178f4a29b5'''
-
-
+# данные удаленного элемента
+print(data)
+'data2'
