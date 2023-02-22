@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ruslan"
+version = "1"
+description = ""
+authors = ["rusov63 <rusov63@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+task = "^0.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
