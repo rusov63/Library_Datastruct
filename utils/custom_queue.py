@@ -18,21 +18,22 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
+    def dequeue(self):
+        """Удаляет из очереди крайний левый элемент"""
+        deqeueued_node = self.head
+        if self.head == None:
+            return None
+        else:
+            self.head = self.head.next_node
+            return deqeueued_node.data
+
 
 queue = Queue()
 queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
 
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-#print(queue.tail.next_node.data)
-
-# Результаты вывода в консоли
-#data1
-#data2
-#data3
-#None
-#AttributeError: 'NoneType' object has no attribute 'data'
+print(queue.dequeue()) # data1.
+print(queue.dequeue()) # data2.
+print(queue.dequeue()) # data3
+print(queue.dequeue()) # None
